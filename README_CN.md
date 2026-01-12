@@ -1,62 +1,62 @@
-# Hello World example for Ameba RTL8721Dx Series SoC（free_rtos）
-* [中文版](./README_CN.md)
+# Ameba RTL8721Dx Hello World 示例（free_rtos）
+* [English Version](./README.md)
 
 
-This is a "Hello World" program based on the RTL8721Dx series SoC. It demonstrates the effects of different log levels in the system and checks WiFi connectivity and IP acquisition via DHCP.
+这是一个基于 RTL8721Dx 系列 SoC 的“Hello World”程序。该程序展示系统的不同日志级别打印效果，并判断 WiFi 的连接状态以及通过 DHCP 获取 IP。
 
 * [EVB 链接](https://item.taobao.com/item.htm?id=904981157046)
 * [IC](https://riot.realmcu.com/cn/module/index.html)
 
-## Features
+## 功能
 
-- Automatically prints system event logs at different levels during initialization.
-- Prints "Hello World" every second after successfully connecting to WiFi and obtaining an IP address.
-- Pauses message printing if the WiFi connection is lost and resumes once it is restored.
+- 程序初始化时，自动打印不同日志级别的系统事件日志。
+- WiFi 连接成功并获得 IP 地址后，每秒打印一次“Hello World”。
+- 如果 WiFi 断开连接，消息打印会暂停，直到连接恢复。
 
-## Working Principle
+## 工作原理
 
-1. **Log Levels**: Displays logs of various levels (such as info, warning, error) during program initialization.
-2. **WiFi Connection**: The system attempts to connect to WiFi and obtain an IP address.
-3. **Message Loop**: Two threads are started in the program: thread 1 listens for the IP address, and thread 2 prints "Hello World".
-4. **WiFi Disconnection**: When WiFi is disconnected, the printing of "Hello World" is paused and resumes after reconnection.
+1. **日志级别**：程序初始化时显示不同级别的日志（如信息、警告、错误）。
+2. **WiFi 连接**：系统尝试连接 WiFi 并获取 IP 地址。
+3. **消息循环**：程序中启动两个线程，线程 1 监听 IP 地址，线程 2 打印“Hello World”。
+4. **WiFi 断线**：当 WiFi 断开时，暂停“Hello World”打印，连接恢复后继续打印。
 
-## Quick Start
+## 快速开始
 
-1. **Select SDK**
-   - Set the path for `env.sh` (`env.bat`): `source {sdk}/env.sh`
-   - Replace `{sdk}` with the absolute path to `env.sh` in the root directory of the [ameba-rtos SDK](https://github.com/Ameba-AIoT/ameba-rtos). This step only needs to be performed once if the SDK path remains unchanged.
+1. **选择 SDK**
+   - 设定 `env.sh` (`env.bat`) 路径：`source {sdk}/env.sh`
+   - 将 `{sdk}` 替换为[ameba-rtos SDK](https://github.com/Ameba-AIoT/ameba-rtos) 根目录下 `env.sh` 的绝对路径。SDK 路径不变时，该步骤仅需执行一次。
 
-2. **Compile**
-   - Execute the following in the HELLO_WORLD root directory:
+2. **编译**
+   - 在HELLO_WORLD 根目录下执行：
      ```bash
      source env.sh
      ameba.py build
      ```
 
-3. **Flash Burning**
+3. **烧录 Flash**
    ```bash
    ameba.py flash --p COMx --image km4_boot_all.bin 0x08000000 0x8014000 --image km0_km4_app.bin 0x08014000 0x8200000
    ```
-   **Note**: Precompiled bin files are provided in the project directory, which can be directly flashed using:
+   **注意**：工程目录中提供了编译好的 bin 文件，直接烧录的方法如下：
    ```bash
    ameba.py flash --p COMx --image ../km4_boot_all.bin 0x08000000 0x8014000 --image ../km0_km4_app.bin 0x08014000 0x8200000
    ```
 
-4. **Monitor**
+4. **监控**
    - `ameba.py monitor --port COM5 --b 1500000`
 
-5. **Connect to WiFi**
-   - Use AT commands to connect to WiFi. Refer to [AT+WLCONN](https://riot.realmcu.com/cn/latest/rtos/atcmd/at_command_wifi.html#at-wlconn) for details.
-   - Example: `AT+WLCONN=ssid,Xiaomi_Pro_2G,pw,12345678`
+5. **连接 WiFi**
+   - 使用 AT 指令连接 WiFi，具体参考 [AT+WLCONN](https://riot.realmcu.com/cn/latest/rtos/atcmd/at_command_wifi.html#at-wlconn)
+   - 示例：`AT+WLCONN=ssid,Xiaomi_Pro_2G,pw,12345678`
 
-6. **Observe Log Outputs**
+6. **观察日志输出**
 
-7. **Reboot the AP and observe log outputs**
+7. **AP 重新上下电，观察日志输出**
 
-8. **Press the RESET button on the development board and observe automatic WiFi reconnection**
-
+8. **点击开发板上的RESET按钮，观察 WiFi 自动重连**
 
 ---
+
 
  ```bash
  log：
