@@ -8,7 +8,7 @@
 🚀 这是一个基于RTL8721Dx系列SoC的“Hello World”程序，演示了系统中不同日志级别的效果，并检查WiFi连接和通过DHCP获取IP。
 
 🖥️ *开发板链接:* [购买开发板](https://item.taobao.com/item.htm?id=904981157046)  
-🔗 *芯片详情:* [芯片信息](https://riot.realmcu.com/cn/module/index.html)
+🔗 *芯片详情:* [芯片信息](https://aiot.realmcu.com/cn/module/index.html)
 
 ## 功能特点
 

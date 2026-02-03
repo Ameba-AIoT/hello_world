@@ -6,7 +6,7 @@
 🚀 This is a "Hello World" program based on the RTL8721Dx series SoC. It demonstrates the effects of different log levels in the system and checks WiFi connectivity and IP acquisition via DHCP.
 
 🖥️ *EVB Link:* [EVB Board](https://item.taobao.com/item.htm?id=904981157046)  
-🔗 *IC Details:* [Chip Information](https://riot.realmcu.com/cn/module/index.html)
+🔗 *IC Details:* [Chip Information](https://aiot.realmcu.com/cn/module/index.html)
 
 ## Features
 
