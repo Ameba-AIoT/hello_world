@@ -1,29 +1,28 @@
-
-## 中文版本
-
-# Ameba RTL8721Dx 系列 SoC 的 Hello World 示例（FreeRTOS）
-
 * [English Version](./README_EN.md)
+
+### Ameba RTL8721Dx 系列 SoC 的 Hello World 示例（FreeRTOS）
+
 
 🚀 这是一个基于RTL8721Dx系列SoC的“Hello World”程序，演示了系统中不同日志级别的效果，并检查WiFi连接和通过DHCP获取IP。
 
-🖥️ *开发板链接:* [购买开发板](https://item.taobao.com/item.htm?id=904981157046)  
-🔗 *芯片详情:* [芯片信息](https://aiot.realmcu.com/cn/module/index.html)
+- 📎 开发板链接  [🛒 淘宝](https://item.taobao.com/item.htm?id=904981157046)   |[📦 Amazon](https://www.amazon.com/-/zh/dp/B0FB33DT2C/)
+- 📄 [芯片详情](https://aiot.realmcu.com/cn/module/index.html)
+- 📚 [AT+WLCONN](https://aiot.realmcu.com/cn/latest/rtos/atcmd/at_command_wifi.html#at-wlconn)
 
-## 功能特点
+### 功能特点
 
-🔹 在初始化期间自动打印不同级别的系统事件日志。  
-🔹 成功连接到WiFi并获取IP地址后，每秒打印“Hello World”。  
-🔹 如果WiFi连接丢失，暂停消息打印，恢复连接后继续打印。
+✅ 在初始化期间自动打印不同级别的系统事件日志。  
+✅ 成功连接到WiFi并获取IP地址后，每秒打印“Hello World”。  
+✅ 如果WiFi连接丢失，暂停消息打印，恢复连接后继续打印。
 
-## 工作原理
+### 工作原理
 
 1️⃣ **日志级别**：在程序初始化期间显示各类日志（如信息、警告、错误）。  
 2️⃣ **WiFi连接**：系统尝试连接WiFi并获取IP地址。  
 3️⃣ **消息循环**：程序中启动了两个线程：线程1监听IP地址，线程2打印“Hello World”。  
 4️⃣ **WiFi断开连接**：当WiFi断开连接时，暂停“Hello World”打印，在重新连接后恢复。
 
-## 快速开始
+### 快速开始
 
 1️⃣ **选择SDK**  
    - 设置`env.sh`（`env.bat`）路径：`source {sdk}/env.sh`  
@@ -46,7 +45,7 @@
    - `ameba.py monitor --port COM5 --b 1500000`
 
 5️⃣ **连接Wi-Fi**  
-   - 使用AT命令连接WiFi，详情参考[AT+WLCONN](https://riot.realmcu.com/cn/latest/rtos/atcmd/at_command_wifi.html#at-wlconn)。  
+   - 使用AT命令连接WiFi，详情参考[AT+WLCONN](https://aiot.realmcu.com/cn/latest/rtos/atcmd/at_command_wifi.html#at-wlconn)。  
    - 示例：`AT+WLCONN=ssid,Xiaomi_Pro_2G,pw,12345678`
 
 6️⃣ **观察日志输出** 📜
@@ -55,6 +54,7 @@
 
 8️⃣ **按开发板上的RESET按钮，观察自动重新连接WiFi** 🔁
 
+### 日志示例
 ---
 
 ```plaintext

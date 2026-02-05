@@ -1,27 +1,28 @@
 
-# Hello World Example for Ameba RTL8721Dx Series SoC (FreeRTOS)
+### Hello World Example for Ameba RTL8721Dx Series SoC (FreeRTOS)
 
 * [中文版](./README_CN.md)
 
 🚀 This is a "Hello World" program based on the RTL8721Dx series SoC. It demonstrates the effects of different log levels in the system and checks WiFi connectivity and IP acquisition via DHCP.
 
-🖥️ *EVB Link:* [EVB Board](https://item.taobao.com/item.htm?id=904981157046)  
-🔗 *IC Details:* [Chip Information](https://aiot.realmcu.com/cn/module/index.html)
+- 📎 EVB Link [🛒 Taobao](https://item.taobao.com/item.htm?id=904981157046)   |[📦 Amazon](https://www.amazon.com/-/zh/dp/B0FB33DT2C/)
+- 📄 [Chip Details](https://aiot.realmcu.com/module/index.html)
+- 📚 [AT+WLCONN](https://aiot.realmcu.com/cn/latest/rtos/atcmd/at_command_wifi.html#at-wlconn)
 
-## Features
+### Features
 
-🔹 Automatically prints system event logs at different levels during initialization.  
-🔹 Prints "Hello World" every second after successfully connecting to WiFi and obtaining an IP address.  
-🔹 Pauses message printing if the WiFi connection is lost and resumes once it is restored.
+✅ Automatically prints system event logs at different levels during initialization.  
+✅ Prints "Hello World" every second after successfully connecting to WiFi and obtaining an IP address.  
+✅ Pauses message printing if the WiFi connection is lost and resumes once it is restored.
 
-## Working Principle
+### Working Principle
 
 1️⃣ **Log Levels**: Displays logs of various levels (such as info, warning, error) during program initialization.  
 2️⃣ **WiFi Connection**: The system attempts to connect to WiFi and obtain an IP address.  
 3️⃣ **Message Loop**: Two threads are started in the program: thread 1 listens for the IP address, and thread 2 prints "Hello World".  
 4️⃣ **WiFi Disconnection**: When WiFi is disconnected, the printing of "Hello World" is paused and resumes after reconnection.
 
-## Quick Start
+### Quick Start
 
 1️⃣ **Select SDK**  
    - Set the path for `env.sh` (`env.bat`): `source {sdk}/env.sh`  
@@ -44,7 +45,7 @@
    - `ameba.py monitor --port COM5 --b 1500000`
 
 5️⃣ **Connect to Wi-Fi**  
-   - Use AT commands to connect to WiFi. Refer to [AT+WLCONN](https://riot.realmcu.com/cn/latest/rtos/atcmd/at_command_wifi.html#at-wlconn) for details.  
+   - Use AT commands to connect to WiFi. Refer to [AT+WLCONN](https://aiot.realmcu.com/cn/latest/rtos/atcmd/at_command_wifi.html#at-wlconn) for details.  
    - Example: `AT+WLCONN=ssid,Xiaomi_Pro_2G,pw,12345678`
 
 6️⃣ **Observe Log Outputs** 📜
@@ -53,6 +54,7 @@
 
 8️⃣ **Press the RESET button on the development board and observe automatic WiFi reconnection** 🔁
 
+### Log Example
 ---
 
 ```plaintext
