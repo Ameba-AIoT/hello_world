@@ -32,5 +32,5 @@ jobs:
         
       - name: Mirror to Gitee        
         run: |              
-            git remote add gitee https://yangdavid988:${{ secrets.TOKEN_GITEE }}@gitee.com/${{ github.repository_owner }}/${{ env.REPO_NAME }}.git 
+            git remote add gitee https://yangdavid988:${{ secrets.TOKEN_GITEE }}@gitee.com/${{ github.repository_owner,, }}/${{ env.REPO_NAME }}.git 
             git push gitee HEAD:refs/heads/main --force
